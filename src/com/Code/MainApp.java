@@ -41,7 +41,7 @@ public class MainApp {
                 }
 
             } catch (Exception e) {
-                System.out.println("Ingrese un numero!\n");
+                System.out.println("Ingrese solo numeros!\n");
             }
         } while (option != 0);
         scanner.close();

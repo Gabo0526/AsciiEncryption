@@ -11,7 +11,7 @@ public class AsciiDecryption {
         this.cipherTextString = "";
     }
 
-    public AsciiDecryption(String cipherTextString) {
+    public AsciiDecryption(String cipherTextString) throws Exception {
         setNewCipherTextString(cipherTextString);
         this.cipherTextIntArray = new int[0];
     }
@@ -39,7 +39,7 @@ public class AsciiDecryption {
         this.decipheredText = stringBuilder.toString();
     }
 
-    public void setNewCipherTextString(String cipherTextString) {
+    public void setNewCipherTextString(String cipherTextString) throws Exception {
         this.cipherTextString = cipherTextString;
         int i = 0;
         char[] cipherTextCharArray = cipherTextString.toCharArray();
@@ -77,7 +77,7 @@ public class AsciiDecryption {
         this.decipheredText = stringBuilder.toString();
     }
 
-    public static String decipherText(String cipherTextString) {
+    public static String decipherText(String cipherTextString) throws Exception{
         int i = 0;
         char[] cipherTextCharArray = cipherTextString.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
