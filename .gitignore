@@ -28,5 +28,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-.idea
-Encryption&Serialization.iml
+.idea/
+Encryption&Serialization.iml/
