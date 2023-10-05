@@ -1,5 +1,8 @@
 // Author: Gabriel Vasconez
-package com.Code;
+package com.Code.tests;
+
+import com.Code.asciiEncryption.AsciiDecryption;
+import com.Code.asciiEncryption.AsciiEncryption;
 
 import java.util.Scanner;
 

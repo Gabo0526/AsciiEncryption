@@ -1,5 +1,5 @@
 // Author: Gabriel Vasconez
-package com.Code;
+package com.Code.asciiEncryption;
 
 import java.util.Arrays;
 import java.util.StringTokenizer;

@@ -1,5 +1,5 @@
 // Author: Gabriel Vasconez
-package com.Code;
+package com.Code.asciiEncryption;
 
 public class AsciiDecryption {
     private int[] cipherTextIntArray;
