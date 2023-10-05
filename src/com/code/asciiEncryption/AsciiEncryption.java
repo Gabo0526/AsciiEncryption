@@ -1,5 +1,5 @@
 // Author: Gabriel Vasconez
-package com.Code.asciiEncryption;
+package com.code.asciiEncryption;
 
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class AsciiEncryption {
 
     private String text;
-    private int[] cipherTextIntArray;
+    private int[] ciphertextIntArray;
 
     public AsciiEncryption(String text) {
         setNewText(text);
@@ -17,22 +17,22 @@ public class AsciiEncryption {
         return text;
     }
 
-    public int[] getCipherTextIntArray() {
-        return cipherTextIntArray;
+    public int[] getCiphertextIntArray() {
+        return ciphertextIntArray;
     }
 
     public void setNewText(String text) {
         this.text = text;
-        this.cipherTextIntArray = new int[text.length()];
+        this.ciphertextIntArray = new int[text.length()];
         char[] textArray = text.toCharArray();
 
         for (int i = 0; i < text.length(); i++) {
-            cipherTextIntArray[i] = (int) textArray[i];
+            ciphertextIntArray[i] = (int) textArray[i];
         }
     }
 
     public String getCipherString() {
-        StringTokenizer tokenizer = new StringTokenizer(Arrays.toString(this.cipherTextIntArray), ", ");
+        StringTokenizer tokenizer = new StringTokenizer(Arrays.toString(this.ciphertextIntArray), ", ");
         StringBuilder stringBuilder = new StringBuilder();
 
         while (tokenizer.hasMoreTokens()) {
@@ -50,15 +50,15 @@ public class AsciiEncryption {
         return stringBuilder1.toString();
     }
 
-    public static String cipherText(String text) {
-        int[] cipherTextIntArray = new int[text.length()];
+    public static String ciphertext(String text) {
+        int[] ciphertextIntArray = new int[text.length()];
         char[] textArray = text.toCharArray();
 
         for (int i = 0; i < text.length(); i++) {
-            cipherTextIntArray[i] = (int) textArray[i];
+            ciphertextIntArray[i] = (int) textArray[i];
         }
 
-        StringTokenizer tokenizer = new StringTokenizer(Arrays.toString(cipherTextIntArray), ", ");
+        StringTokenizer tokenizer = new StringTokenizer(Arrays.toString(ciphertextIntArray), ", ");
         StringBuilder stringBuilder0 = new StringBuilder();
 
         while (tokenizer.hasMoreTokens()) {
@@ -75,38 +75,4 @@ public class AsciiEncryption {
 
         return stringBuilder1.toString();
     }
-
-    //    public String getCipherTextString00() {
-//        StringTokenizer tokenizer = new StringTokenizer(Arrays.toString(this.cipherTextIntArray), ", ");
-//        StringBuilder stringBuilder = new StringBuilder();
-//
-//        while (tokenizer.hasMoreTokens()) {
-//            String token = tokenizer.nextToken();
-//            int intToken;
-//
-//            try {
-//                intToken = Integer.parseInt(token);
-//            } catch (Exception e) {
-//                char[] tokenCharArray = token.toCharArray();
-//
-//                if (tokenizer.hasMoreTokens()) {
-//                    if (token.length() == 3) {
-//                        intToken = Integer.parseInt(String.format("%c%c", tokenCharArray[1], tokenCharArray[2]));
-//                    } else {
-//                        intToken = Integer.parseInt(String.format("%c%c%c", tokenCharArray[1], tokenCharArray[2], tokenCharArray[3]));
-//                    }
-//                } else {
-//                    if (token.length() == 3) {
-//                        intToken = Integer.parseInt(String.format("%c%c", tokenCharArray[0], tokenCharArray[1]));
-//                    } else {
-//                        intToken = Integer.parseInt(String.format("%c%c%c", tokenCharArray[0], tokenCharArray[1], tokenCharArray[2]));
-//                    }
-//                }
-//            }
-//
-//            stringBuilder.append(intToken);
-//        }
-//
-//        return stringBuilder.toString();
-//    }
 }

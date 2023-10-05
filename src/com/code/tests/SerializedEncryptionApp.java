@@ -1,21 +1,20 @@
-package com.Code.tests;
+package com.code.tests;
 
-import com.Code.myEncryption.*;
-
+import com.code.serializedEncryption.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class MyEncryptionApp {
+public class SerializedEncryptionApp {
     public static void main(String[] args) throws IOException {
-        MyEncryption encryption = new MyEncryption();
-        ByteArrayOutputStream ciphertext = encryption.encryptText("Hola, mundo!", 13);
+        SerializedEncryption encryption = new SerializedEncryption();
+        ByteArrayOutputStream ciphertext = encryption.encryptNewText("Hola, mundo!", 13);
 
         System.out.printf("El texto cifrado es: %s\n", ciphertext);
 
-        MyDecryption decryption = new MyDecryption(ciphertext, 13);
+        SerializedDecryption decryption = new SerializedDecryption(ciphertext, 13);
         System.out.printf("El texto descifrado es: %s\n\n", decryption.getDecipheredText());
 
-        ciphertext = encryption.encryptText("Hey! Este es un nuevo texto", 12435);
+        ciphertext = encryption.encryptNewText("Hey! Este es un nuevo texto", 12435);
         System.out.printf("El texto cifrado es: %s\n", ciphertext);
 
         decryption.decipherNewText(ciphertext, 12435);

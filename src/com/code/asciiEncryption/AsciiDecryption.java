@@ -1,59 +1,59 @@
 // Author: Gabriel Vasconez
-package com.Code.asciiEncryption;
+package com.code.asciiEncryption;
 
 public class AsciiDecryption {
-    private int[] cipherTextIntArray;
-    private String cipherTextString;
+    private int[] ciphertextIntArray;
+    private String ciphertextString;
     private String decipheredText;
 
-    public AsciiDecryption(int[] cipherTextIntArray) {
-        setNewCipherTextIntArray(cipherTextIntArray);
-        this.cipherTextString = "";
+    public AsciiDecryption(int[] ciphertextIntArray) {
+        setNewCiphertextIntArray(ciphertextIntArray);
+        this.ciphertextString = "";
     }
 
-    public AsciiDecryption(String cipherTextString) throws Exception {
-        setNewCipherTextString(cipherTextString);
-        this.cipherTextIntArray = new int[0];
+    public AsciiDecryption(String ciphertextString) throws Exception {
+        setNewCiphertextString(ciphertextString);
+        this.ciphertextIntArray = new int[0];
     }
 
-    public int[] getCipherTextIntArray() {
-        return cipherTextIntArray;
+    public int[] getCiphertextIntArray() {
+        return ciphertextIntArray;
     }
 
-    public String getCipherTextString() {
-        return cipherTextString;
+    public String getCiphertextString() {
+        return ciphertextString;
     }
 
     public String getDecipheredText() {
         return decipheredText;
     }
 
-    public void setNewCipherTextIntArray(int[] cipherText) {
-        this.cipherTextIntArray = cipherText;
+    public void setNewCiphertextIntArray(int[] ciphertext) {
+        this.ciphertextIntArray = ciphertext;
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i : cipherText) {
+        for (int i : ciphertext) {
             stringBuilder.append((char) i);
         }
 
         this.decipheredText = stringBuilder.toString();
     }
 
-    public void setNewCipherTextString(String cipherTextString) throws Exception {
-        this.cipherTextString = cipherTextString;
+    public void setNewCiphertextString(String ciphertextString) throws Exception {
+        this.ciphertextString = ciphertextString;
         int i = 0;
-        char[] cipherTextCharArray = cipherTextString.toCharArray();
+        char[] ciphertextCharArray = ciphertextString.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
 
-        while (i < cipherTextString.length()) {
+        while (i < ciphertextString.length()) {
             int a = 0;
             int b = 0;
             boolean c = false;
 
-            String A = String.format("%c%c", cipherTextCharArray[i], cipherTextCharArray[i + 1]);
+            String A = String.format("%c%c", ciphertextCharArray[i], ciphertextCharArray[i + 1]);
 
             try {
-                String B = String.format("%c%c%c", cipherTextCharArray[i], cipherTextCharArray[i + 1], cipherTextCharArray[i + 2]);
+                String B = String.format("%c%c%c", ciphertextCharArray[i], ciphertextCharArray[i + 1], ciphertextCharArray[i + 2]);
                 a = Integer.parseInt(A);
                 b = Integer.parseInt(B);
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -77,20 +77,20 @@ public class AsciiDecryption {
         this.decipheredText = stringBuilder.toString();
     }
 
-    public static String decipherText(String cipherTextString) throws Exception{
+    public static String decipherText(String ciphertextString) throws Exception{
         int i = 0;
-        char[] cipherTextCharArray = cipherTextString.toCharArray();
+        char[] ciphertextCharArray = ciphertextString.toCharArray();
         StringBuilder stringBuilder = new StringBuilder();
 
-        while (i < cipherTextString.length()) {
+        while (i < ciphertextString.length()) {
             int a = 0;
             int b = 0;
             boolean c = false;
 
-            String A = String.format("%c%c", cipherTextCharArray[i], cipherTextCharArray[i + 1]);
+            String A = String.format("%c%c", ciphertextCharArray[i], ciphertextCharArray[i + 1]);
 
             try {
-                String B = String.format("%c%c%c", cipherTextCharArray[i], cipherTextCharArray[i + 1], cipherTextCharArray[i + 2]);
+                String B = String.format("%c%c%c", ciphertextCharArray[i], ciphertextCharArray[i + 1], ciphertextCharArray[i + 2]);
                 a = Integer.parseInt(A);
                 b = Integer.parseInt(B);
             } catch (ArrayIndexOutOfBoundsException e) {

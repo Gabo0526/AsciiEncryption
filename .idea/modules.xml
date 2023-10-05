@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CifradoAscii.iml" filepath="$PROJECT_DIR$/CifradoAscii.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Encryption&amp;Serialization.iml" filepath="$PROJECT_DIR$/Encryption&amp;Serialization.iml" />
     </modules>
   </component>
 </project>
