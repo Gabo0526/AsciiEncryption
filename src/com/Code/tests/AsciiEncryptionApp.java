@@ -6,7 +6,7 @@ import com.Code.asciiEncryption.AsciiEncryption;
 
 import java.util.Scanner;
 
-public class MainApp {
+public class AsciiEncryptionApp {
 
     public static int menu() {
         Scanner scanner = new Scanner(System.in);

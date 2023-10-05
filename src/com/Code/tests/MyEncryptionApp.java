@@ -5,7 +5,7 @@ import com.Code.myEncryption.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class StrongEncryptionApp {
+public class MyEncryptionApp {
     public static void main(String[] args) throws IOException {
         MyEncryption encryption = new MyEncryption();
         ByteArrayOutputStream ciphertext = encryption.encryptText("Hola, mundo!", 13);
