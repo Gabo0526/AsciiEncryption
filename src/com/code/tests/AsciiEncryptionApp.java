@@ -1,8 +1,7 @@
 // Author: Gabriel Vasconez
 package com.code.tests;
 
-import com.code.asciiEncryption.AsciiDecryption;
-import com.code.asciiEncryption.AsciiEncryption;
+import com.code.asciiEncryption.*;
 
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class AsciiEncryptionApp {
 
         return option;
     }
-    
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("ASCII ENCRYPTOR AND DECRYPTOR\n");
@@ -29,7 +28,7 @@ public class AsciiEncryptionApp {
                     case 1:
                         System.out.println("\nIngrese el texto a cifrar: ");
                         AsciiEncryption asciiEncryption = new AsciiEncryption(scanner.nextLine());
-                        System.out.printf("El texto encriptado es: %s\n\n", asciiEncryption.getCipherString());
+                        System.out.printf("El texto encriptado es: %s\n\n", asciiEncryption.getCiphertextString());
                         break;
                     case 2:
                         System.out.println("\nIngrese el texto a descifrar: ");

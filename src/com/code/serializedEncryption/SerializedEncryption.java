@@ -1,3 +1,4 @@
+// Author: Gabriel Vasconez
 package com.code.serializedEncryption;
 
 import java.io.*;
@@ -5,6 +6,7 @@ import java.io.*;
 public class SerializedEncryption implements Serializable {
     private int[] ciphertextIntArray;
     public SerializedEncryption() {
+        this.ciphertextIntArray = new int[100];
     }
 
     public ByteArrayOutputStream encryptNewText(String text, int key) throws IOException {

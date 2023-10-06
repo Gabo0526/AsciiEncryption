@@ -1,10 +1,9 @@
+// Author: Gabriel Vasconez
 package com.code.serializedEncryption;
 
 import java.io.*;
 
 public class SerializedDecryption {
-    private int key;
-    private SerializedEncryption deserializedCiphertext;
     private String decipheredText;
 
     public SerializedDecryption(ByteArrayOutputStream serializedCiphertext, int key) {
@@ -12,18 +11,20 @@ public class SerializedDecryption {
     }
 
     public void decipherNewText(ByteArrayOutputStream serializedCiphertext, int key) {
+        SerializedEncryption deserializedCiphertext = new SerializedEncryption();
+
         try {
             ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(serializedCiphertext.toByteArray());
             ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
 
-            this.deserializedCiphertext = (SerializedEncryption) objectInputStream.readObject();
+            deserializedCiphertext = (SerializedEncryption) objectInputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i : this.deserializedCiphertext.getCiphertextIntArray()) {
+        for (int i : deserializedCiphertext.getCiphertextIntArray()) {
             stringBuilder.append((char) (i + key));
         }
 
