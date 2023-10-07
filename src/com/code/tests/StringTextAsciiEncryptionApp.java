@@ -5,7 +5,7 @@ import com.code.asciiEncryption.*;
 
 import java.util.Scanner;
 
-public class AsciiEncryptionApp {
+public class StringTextAsciiEncryptionApp {
 
     public static int menu() {
         Scanner scanner = new Scanner(System.in);
@@ -14,6 +14,33 @@ public class AsciiEncryptionApp {
         scanner.nextLine();
 
         return option;
+    }
+
+    public static String getText() {
+        String stopConstant = "fin";
+        Scanner scanner = new Scanner(System.in);
+        String dataInput;
+        String output;
+        StringBuilder stringBuilder0 = new StringBuilder();
+
+        System.out.printf("Ingrese el texto a cifrar. Para terminar, escriba la palabra: %s\n", stopConstant);
+
+        do {
+            dataInput = scanner.nextLine();
+            stringBuilder0.append(dataInput);
+            stringBuilder0.append(" ");
+        } while (!dataInput.endsWith(stopConstant));
+
+        char[] stringBuilderCharArray = stringBuilder0.toString().toCharArray();
+        StringBuilder stringBuilder1 = new StringBuilder();
+
+        for (int i = 0; i < stringBuilderCharArray.length - (stopConstant.length() + 1); i++) {
+            stringBuilder1.append(stringBuilderCharArray[i]);
+        }
+
+        output = stringBuilder1.toString();
+
+        return output;
     }
 
     public static void main(String[] args) {
@@ -26,8 +53,7 @@ public class AsciiEncryptionApp {
                 option = menu();
                 switch (option) {
                     case 1:
-                        System.out.println("\nIngrese el texto a cifrar: ");
-                        AsciiEncryption asciiEncryption = new AsciiEncryption(scanner.nextLine());
+                        AsciiEncryption asciiEncryption = new AsciiEncryption(getText());
                         System.out.printf("El texto encriptado es: %s\n\n", asciiEncryption.getCiphertextString());
                         break;
                     case 2:
