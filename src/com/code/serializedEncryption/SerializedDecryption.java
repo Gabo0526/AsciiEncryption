@@ -1,15 +1,30 @@
-// Author: Gabriel Vasconez
 package com.code.serializedEncryption;
 
 import java.io.*;
 
+/**
+ * Class for deserializing and decrypt encrypted text by the SerializedEncryption class.
+ * Author: Gabriel Vasconez
+ */
 public class SerializedDecryption {
     private String decipheredText;
 
+    /**
+     * Constructor that deserializes encrypted text and decrypts it.
+     *
+     * @param serializedCiphertext The serialized encrypted text.
+     * @param key                  The key for decryption.
+     */
     public SerializedDecryption(ByteArrayOutputStream serializedCiphertext, int key) {
         decipherNewText(serializedCiphertext, key);
     }
 
+    /**
+     * Deserializes encrypted text and decrypts it.
+     *
+     * @param serializedCiphertext The serialized encrypted text.
+     * @param key                  The key for decryption.
+     */
     public void decipherNewText(ByteArrayOutputStream serializedCiphertext, int key) {
         SerializedEncryption deserializedCiphertext = new SerializedEncryption();
 
@@ -31,6 +46,11 @@ public class SerializedDecryption {
         this.decipheredText = stringBuilder.toString();
     }
 
+    /**
+     * Gets the decrypted text.
+     *
+     * @return The decrypted text.
+     */
     public String getDecipheredText() {
         return decipheredText;
     }

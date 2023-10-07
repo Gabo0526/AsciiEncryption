@@ -1,12 +1,20 @@
-// Author: Gabriel Vasconez
 package com.code.tests;
 
 import com.code.asciiEncryption.*;
 
 import java.util.Scanner;
 
+/**
+ * Command-line application for encrypting and decrypting text in ASCII format.
+ * Author: Gabriel Vasconez
+ */
 public class StringTextAsciiEncryptionApp {
 
+    /**
+     * Displays a menu and prompts the user for an option.
+     *
+     * @return The selected option.
+     */
     public static int menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Seleccione una opcion:\n[1] Encriptar texto\n[2] Desencriptar texto\n[0] Salir");
@@ -16,25 +24,30 @@ public class StringTextAsciiEncryptionApp {
         return option;
     }
 
+    /**
+     * Reads text input from the user, terminates when a specified stop suffix is entered.
+     *
+     * @return The entered text without the stop suffix.
+     */
     public static String getText() {
-        String stopConstant = "fin";
+        String stopSuffix = "fin";
         Scanner scanner = new Scanner(System.in);
         String dataInput;
         String output;
         StringBuilder stringBuilder0 = new StringBuilder();
 
-        System.out.printf("Ingrese el texto a cifrar. Para terminar, escriba la palabra: %s\n", stopConstant);
+        System.out.printf("Ingrese el texto a cifrar. Para terminar, escriba la palabra: %s\n", stopSuffix);
 
         do {
             dataInput = scanner.nextLine();
             stringBuilder0.append(dataInput);
             stringBuilder0.append(" ");
-        } while (!dataInput.endsWith(stopConstant));
+        } while (!dataInput.endsWith(stopSuffix));
 
         char[] stringBuilderCharArray = stringBuilder0.toString().toCharArray();
         StringBuilder stringBuilder1 = new StringBuilder();
 
-        for (int i = 0; i < stringBuilderCharArray.length - (stopConstant.length() + 1); i++) {
+        for (int i = 0; i < stringBuilderCharArray.length - (stopSuffix.length() + 1); i++) {
             stringBuilder1.append(stringBuilderCharArray[i]);
         }
 
@@ -43,6 +56,11 @@ public class StringTextAsciiEncryptionApp {
         return output;
     }
 
+    /**
+     * Main method to run the application.
+     *
+     * @param args Command-line arguments (not used in this case).
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("ASCII ENCRYPTOR AND DECRYPTOR\n");

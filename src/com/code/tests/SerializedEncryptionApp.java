@@ -1,11 +1,21 @@
-// Author: Gabriel Vasconez
 package com.code.tests;
 
 import com.code.serializedEncryption.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+/**
+ * Application to demonstrate encryption and decryption using SerializedEncryption and SerializedDecryption.
+ * Author: Gabriel Vasconez
+ */
 public class SerializedEncryptionApp {
+
+    /**
+     * Main method to run the application.
+     *
+     * @param args Command-line arguments (not used in this case).
+     * @throws IOException If an I/O error occurs during serialization.
+     */
     public static void main(String[] args) throws IOException {
         SerializedEncryption encryption = new SerializedEncryption();
         ByteArrayOutputStream ciphertext = encryption.encryptNewText("Hola, mundo!", 13);
