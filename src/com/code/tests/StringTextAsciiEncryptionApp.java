@@ -30,7 +30,7 @@ public class StringTextAsciiEncryptionApp {
      * @return The entered text without the stop suffix.
      */
     public static String getText() {
-        String stopSuffix = "fin";
+        String stopSuffix = "end";
         Scanner scanner = new Scanner(System.in);
         String dataInput;
         String output;
