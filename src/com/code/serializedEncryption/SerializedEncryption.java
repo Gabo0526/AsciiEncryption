@@ -28,7 +28,7 @@ public class SerializedEncryption implements Serializable {
         this.ciphertextIntArray = new int[text.length()];
 
         for (int i = 0; i < text.length(); i++) {
-            ciphertextIntArray[i] = ((int) text.toCharArray()[i]) - key;
+            ciphertextIntArray[i] = ((int) text.toCharArray()[i]) + key;
         }
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

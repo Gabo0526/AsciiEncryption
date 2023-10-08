@@ -40,7 +40,7 @@ public class SerializedDecryption {
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i : deserializedCiphertext.getCiphertextIntArray()) {
-            stringBuilder.append((char) (i + key));
+            stringBuilder.append((char) (i - key));
         }
 
         this.decipheredText = stringBuilder.toString();
