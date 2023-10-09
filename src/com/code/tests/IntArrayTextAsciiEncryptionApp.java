@@ -27,7 +27,8 @@ public class IntArrayTextAsciiEncryptionApp {
     }
 
     /**
-     * Reads text input from the user, terminates when a specified stop suffix is entered.
+     * Reads text input from the user, terminates when a specified stop suffix is
+     * entered.
      *
      * @return The entered text without the stop suffix.
      */
@@ -74,7 +75,8 @@ public class IntArrayTextAsciiEncryptionApp {
                 switch (option) {
                     case 1:
                         AsciiEncryption asciiEncryption = new AsciiEncryption(getText());
-                        System.out.printf("El texto encriptado es: %s\n\n", Arrays.toString(asciiEncryption.getCiphertextIntArray()));
+                        System.out.printf("El texto encriptado es: %s\n\n",
+                                Arrays.toString(asciiEncryption.getCiphertextIntArray()));
                         break;
                     case 2:
                         System.out.println("\nIngrese el texto a descifrar: ");
